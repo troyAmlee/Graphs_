@@ -58,7 +58,25 @@ class Graph:
         beginning from starting_vertex.
         This should be done using recursion.
         """
-        pass  # TODO
+        if(type(starting_vertex) == type(0)):
+            stack = [[starting_vertex], []]
+            
+        elif(type(starting_vertex) == type(list())):
+            stack = starting_vertex
+        if(len(stack[0]) > 0):
+            deq = stack[0].pop()
+            if(deq not in stack[1]):
+                print(deq)
+                stack[1].append(deq)
+                for i in self.vertices[deq]:
+                    stack[0].append(i)
+                return self.dft_recursive(stack)
+            return self.dft_recursive(stack)
+        print(starting_vertex[1])
+        return starting_vertex[1]
+        
+
+            
     def bfs(self, starting_vertex, destination_vertex):
         # Create an empty queue and enqueue A PATH TO the starting vertex ID
         q = Queue()
