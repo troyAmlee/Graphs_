@@ -249,4 +249,5 @@ if __name__ == '__main__':
     '''
     print("dfs")
     print(graph.dfs(1, 6))
+    print("dfs recursive")
     print(graph.dfs_recursive(1, 6))
