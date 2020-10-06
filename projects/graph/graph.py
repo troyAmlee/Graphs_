@@ -105,6 +105,7 @@ class Graph:
                     deq.pop()
                 # COPY THE PATH
                 # APPEND THE NEIGHOR TO THE BACK
+        return None
 
     def dfs(self, starting_vertex, destination_vertex):
         """
@@ -139,6 +140,7 @@ class Graph:
                     deq.pop()
                 # COPY THE PATH
                 # APPEND THE NEIGHOR TO THE BACK
+        return None
 
     def dfs_recursive(self, starting_vertex, destination_vertex):
         """
@@ -169,6 +171,8 @@ class Graph:
                     deq.pop()
                     stack[0].append(c)
                 return self.dfs_recursive(stack, destination_vertex)
+        else:
+            return None
 
 if __name__ == '__main__':
     graph = Graph()  # Instantiate your graph
