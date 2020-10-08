@@ -43,12 +43,14 @@ class SocialGraph:
         """
         if userID == friendID:
             print("WARNING: You cannot be friends with yourself")
+            return False
         elif friendID in self.friendships[userID] or userID in self.friendships[friendID]:
             print("WARNING: Friendship already exists")
+            return False
         else:
             self.friendships[userID].add(friendID)
             self.friendships[friendID].add(userID)
-
+        return True
     def addUser(self, name): # Add Node/Vertex
         """
         Create a new user with a sequential integer ID
@@ -192,15 +194,15 @@ class SocialGraph:
 
 if __name__ == '__main__':
     sg = SocialGraph()
-    sg.populateGraph(1000, 5)
+    sg.populateGraph(100, 5)
     print(sg.users)
     print("--------------------------------")
     print(sg.friendships)
     print("--------------------------------")
-    connections = sg.getAllSocialPaths(1)
-    print(connections)
-    print("--------------------------------")
-    print("Percent of other users in extended social network")
-    print(sg.percent_in_network(1))
-    print("--------------------------------")
-    print(sg.avg_degree(1))
+    # connections = sg.getAllSocialPaths(1)
+    # print(connections)
+    # print("--------------------------------")
+    # print("Percent of other users in extended social network")
+    # print(sg.percent_in_network(1))
+    # print("--------------------------------")
+    # print(sg.avg_degree(1))
