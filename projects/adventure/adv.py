@@ -301,6 +301,7 @@ while(count < len(roomGraph) + 2):
         if(newMap.vertices[player.currentRoom.id][move] == "?"):
             next_room = currentMap.vertices[player.currentRoom.id][move]
             print("Unexplored Path Found")
+            # possible_traversal = newMap.dft(player.currentRoom.id)
             print(f"nextroom: {next_room}, currentroom: {player.currentRoom.id}")
             newMap.add_edge(player.currentRoom.id, next_room)
             count += 1
